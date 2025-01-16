@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import MainMenu from "@/components/main-menu";
 import { useSpring, animated } from "react-spring";
 import { Pixelify_Sans } from "next/font/google";
-import { useMediaQuery } from "react-responsive";
 
 const PixelifySans = Pixelify_Sans({
   subsets: ["cyrillic", "latin", "latin-ext"],
@@ -94,13 +93,13 @@ export default function Header({
         {buttons.map((b) => (
           <a
             href={b.link}
-            className={"menu-option " + PixelifySans.className}
+            className={"menu-option " + PixelifySans.className + " hover:scale-110 transition-all"}
             key={b.name}
           >
             {b.name}
           </a>
         ))}
-        <button className="menu-toggle" onClick={changeImage}>
+        <button className="menu-toggle hover:scale-110 transition-all" onClick={changeImage}>
           {isTransitioning ? (
             <animated.div style={isDark ? fadeIn : fadeOut}>
               {getImage()}
@@ -109,15 +108,23 @@ export default function Header({
             getImage()
           )}
         </button>
-        <a href="mailto:chair@cucai.ca" className="contact-us">
+        {/* <a href="mailto:chair@cucai.ca" className="contact-us hover:scale-110 transition-all">
           <Image
-            src="/CTA Button.png"
+            src="/CTA Button Pixel.png"
             alt="Contact Us"
             className={PixelifySans.className}
             width={123}
             height={45}
           />
-        </a>
+        </a> */}
+          <a className={``}>
+            <img 
+              src="./contact-us-button.png"
+              alt="mailto:chair@cucai.ca" 
+              className={`w-[123px] h-auto hover:brightness-110 active:brightness-90 sm:hover:scale-110 transition-all`}
+            />
+          </a>
+
       </div>
     );
   };
@@ -163,9 +170,9 @@ export default function Header({
         isDark ? "bg-[#171456]" : "bg-[#7364ff]"
       } px-5 md:px-[80px] py-[8px] justify-between`}
     >
-      <div className="cucai-logo">
+      <div className="cucai-logo hover:scale-110 transition-all">
         <Image
-          src="/image.png"
+          src="/CUCAI LOGO.svg"
           alt="CUCAI logo"
           width={142.8}
           height={68}

@@ -90,7 +90,7 @@ export function StudentPartners({windowWidth, isDark}:{windowWidth:number, isDar
         </div>
         {/* QMIND Feature */}
         <div className="flex flex-row justify-center">
-          <div className="pixel-corners--wrapper">
+          <div className="pixel-corners--wrapper hover:scale-110 transition-all">
             <div 
               className={`pixel-corners w-[70vw] lg:w-[60vw]`}
               style={{
@@ -99,7 +99,7 @@ export function StudentPartners({windowWidth, isDark}:{windowWidth:number, isDar
             >
               <div className="p-8 flex flex-col md:flex-row md:justify-center">
                 {/* Text stuff */}
-                <div className={`flex flex-col text-center md:text-right ${IBMPlexSans.className} ${textColor}`}>
+                <div className={`flex flex-col text-center md:text-right ${PixelifySans.className} ${textColor}`}>
                   <p className="text-4xl sm:text-5xl lg:text-6xl font-[700]">
                     QMIND
                   </p>
@@ -145,7 +145,7 @@ export function StudentPartners({windowWidth, isDark}:{windowWidth:number, isDar
                   <img 
                     src="./logos/qmind-logo.png"
                     alt="QMIND Logo"
-                    className="w-[50vw] h-auto px-8"
+                    className="w-[50vw] h-auto max-w-[100%] px-8"
                   />
                 </div>
               </div>
@@ -157,14 +157,14 @@ export function StudentPartners({windowWidth, isDark}:{windowWidth:number, isDar
         <div>
           {chunked_partners.map((row, row_index) => (
             <div key={row_index} className="flex flex-row justify-center">
-              <div className="mt-[8vh] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div className="mt-[8vh] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[5vw]">
               {row.map((partner, index) => (
                   // Partner exterior
-                  <div key={index} className="pixel-corners--wrapper">
+                  <div key={index} className="pixel-corners--wrapper hover:scale-110 transition-all">
 
                     {/* Partner interior */}
                     <div 
-                      className="pixel-corners w-[70vw] sm:w-[40vw] md:w-[30vw] p-8 min-h-[45vh]"
+                      className="pixel-corners w-[70vw] sm:w-[40vw] lg:w-[25vw] p-8 min-h-[45vh]"
                       // className="pixel-corners w-[70vw] sm:w-[27vw] md:w-[45vw] lg:w-[27vw] min-h-[35vh]"
                       style={{
                         background: gradients[row_index] ? 
@@ -179,7 +179,6 @@ export function StudentPartners({windowWidth, isDark}:{windowWidth:number, isDar
                           <div className="flex flex-row justify-center">
                             {/* UTMIST's logo is too wide, causing problems. Help would be greatly appreciated. */}
                             <img 
-                              loading="lazy"
                               src={partner.logo}
                               style={{
                                 width: `${1.1*partner.width}px`,
@@ -189,7 +188,7 @@ export function StudentPartners({windowWidth, isDark}:{windowWidth:number, isDar
                               // className={`w-[${partner.width}px]`}
                             />
                           </div>
-                          <p className={`${IBMPlexSans.className} ${textColor} text-center mt-4`}>
+                          <p className={`${PixelifySans.className} ${textColor} text-center mt-4`}>
                             <p className={`lg:mt-[3vh] text-4xl sm:text-5xl font-[700]`}>
                               {partner.name}
                             </p>
@@ -234,7 +233,7 @@ export function StudentPartners({windowWidth, isDark}:{windowWidth:number, isDar
         </div>
 
         {/* Become a partner button */}
-        <a href="mailto:chair@cucai.ca" className="flex flex-row justify-center">
+        <a href="mailto:chair@cucai.ca" className="flex flex-row justify-center sm:hover:scale-110 transition-all">
           <img 
             src="./become_a_partner.png"
             alt="Become a partner here"
