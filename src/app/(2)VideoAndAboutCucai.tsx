@@ -23,12 +23,12 @@ export function AboutCucai({windowWidth, isDark}:{windowWidth:number, isDark:boo
     "#4d88ff",
     "#a2d8eb"
   ];
-  const textColor = isDark ? "text-white" : "text-black";
+  const textColor = isDark ? " text-[#4705d2]" : "text-[#a2d8d7]";
   // console.log([start, end]);
 
   return (
     // To center elements on small screens
-    <div className={`second-section flex flex-row mt-[10vh] ${windowWidth < border && "justify-center"}`}>
+    <div className={`second-section flex flex-row ${windowWidth < border && "justify-center"}`}>
 
       {/* Parent container of main elements */}
       <div className={`flex ${windowWidth < border && "flex-col"} px-[80px] py-[100px]`}>

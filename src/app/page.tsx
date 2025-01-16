@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "./Header";
 import { Landing } from "./(1)LandingPage";
 import { AboutCucai } from "./(2)VideoAndAboutCucai";
 import { PastSpeakers } from "./(3)AIExpertsOnStage";
@@ -10,6 +9,7 @@ import { CUCAITeamShowcase } from "./(6)LeadersBehindTheVision";
 import { Footer } from "./Footer";
 import { useState, useEffect } from "react";
 import { About } from "@/components/About";
+import { WhyCUCAI } from "./(2.5)WhyCUCAI";
 
 // TODO: Add other Uni's website and instagram links
 
@@ -24,6 +24,12 @@ const icons = [
   { src: "/email.png", link: "/" },
   { src: "/instagram.png", link: "/" },
   { src: "/linkedin.png", link: "/" },
+];
+
+export const achievements = [
+  { number: "340+", category: "DELEGATES" },
+  { number: "10+", category: "INDUSTRY PARTNERS" },
+  { number: "19", category: "SCHOOLS REPRESENTED" },
 ];
 
 export default function Home() {
@@ -49,11 +55,11 @@ export default function Home() {
 
   return (
     <div className={`w-[${windowWidth}px] overflow-x-hidden m-auto`}>
-      <Header isDark={isDark} setDark={setDark} />
-
-      <Landing windowWidth={windowWidth} isDark={isDark} />
+      <Landing windowWidth={windowWidth} isDark={isDark} setDark={setDark} />
       
       <About isDark={isDark} />
+
+      <WhyCUCAI achievements={achievements} isDark={isDark}/>
 
       <div
         id="speakers"
