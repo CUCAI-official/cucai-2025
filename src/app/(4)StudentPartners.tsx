@@ -74,8 +74,8 @@ export function StudentPartners({windowWidth, isDark}:{windowWidth:number, isDar
   // for(let i = 0; i < gradients.length; i++){
   //   console.log(i + " " + gradients[i].from + ", " + gradients[i].to);
   // }
-  console.log(chunked_partners[0]);
-  console.log(chunked_partners[1]);
+  // console.log(chunked_partners[0]);
+  // console.log(chunked_partners[1]);
 
   return (
     <div className="fourth-section flex flex-row justify-center p-8">
@@ -158,7 +158,7 @@ export function StudentPartners({windowWidth, isDark}:{windowWidth:number, isDar
         <div>
           {chunked_partners.map((row, row_index) => (
             <div key={row_index} className="flex flex-row justify-center">
-              <div className="mt-[8vh] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[5vw]">
+              <div className="mt-[8vh] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {row.map((partner, index) => (
                   // Partner exterior
                   <div key={index} className="pixel-corners--wrapper hover:scale-110 transition-all">
@@ -189,7 +189,7 @@ export function StudentPartners({windowWidth, isDark}:{windowWidth:number, isDar
                               // className={`w-[${partner.width}px]`}
                             />
                           </div>
-                          <p className={`${PixelifySans.className} ${textColor} text-center mt-4`}>
+                          <div className={`${PixelifySans.className} ${textColor} text-center mt-4`}>
                             <p className={`lg:mt-[3vh] text-4xl sm:text-5xl font-[700]`}>
                               {partner.name}
                             </p>
@@ -222,7 +222,7 @@ export function StudentPartners({windowWidth, isDark}:{windowWidth:number, isDar
                                 </a>
                               </div>
                             </div>
-                          </p>
+                          </div>
                         </div>
                       </div>
                     </div>

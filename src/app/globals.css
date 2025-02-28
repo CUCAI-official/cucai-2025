@@ -109,7 +109,7 @@ body {
   align-items: center;
   padding-top: 85px;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
   box-sizing: border-box;
 }
@@ -196,8 +196,14 @@ body {
   font-size: 18px;
 }
 
+.carousel-inner-landing {
+  animation: scroll 50s linear infinite; /* Adjust timing for speed */
+  width: max-content;
+  display: flex;
+}
 
 .second-section {
+  /* background: black; */
   background: linear-gradient(rgba(77, 136, 255, 1), rgba(162, 216, 235, 1) 20%);
 }
 
